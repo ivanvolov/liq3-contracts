@@ -1,0 +1,13 @@
+# foundry
+cache/
+out/
+broadcast/
+
+# env
+.env
+
+# misc
+.DS_Store
+
+# local
+github.pointer.md

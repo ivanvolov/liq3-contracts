@@ -1,0 +1,31 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+test = "test"
+script = "script"
+
+solc_version = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 800
+via_ir = false
+bytecode_hash = "none"
+
+[lint]
+# block-timestamp: day-scale windows and maturities are the product; sub-15s validator
+# drift is irrelevant. unsafe-typecast: all casts are range-guarded or counter-derived.
+exclude_lints = ["block-timestamp", "unsafe-typecast"]
+
+[fuzz]
+runs = 512
+
+[invariant]
+runs = 64
+depth = 32
+fail_on_revert = false
+
+[fmt]
+line_length = 120
+tab_width = 4
+quote_style = "double"
